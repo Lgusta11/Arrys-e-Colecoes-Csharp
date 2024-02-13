@@ -1,67 +1,28 @@
-﻿Console.WriteLine("Boas Vindas ao ByteBank, Atendimento.");
+﻿using System;
+using bytebank.Modelos.Conta;
 
-TestaBuscarPalavra();
-
-
-TestaArray();
-
-
-
-void TestaArray()
+class Program
 {
-    int[] idades = { 10, 5, 15, 8, 6 }; // inicialização direta do array
-
-    Console.WriteLine($"Tamanho do array: {idades.Length}");
-
-    Console.WriteLine("Idades:");
-
-    for (int i = 0; i < idades.Length; i++)
+    static void Main()
     {
-        Console.WriteLine($"Índice [{i}] = {idades[i]}");
+        Console.WriteLine("Boas Vindas ao ByteBank, Atendimento.");
+
+        Array amostra = Array.CreateInstance(typeof(double), 5);
+        amostra.SetValue(34, 0);
+        amostra.SetValue(78, 1);
+        amostra.SetValue(29, 2);
+        amostra.SetValue(67, 3);
+        amostra.SetValue(45, 4);
+
+        TestaArrayContas();
     }
 
-    int soma = 0;
-    foreach (int idade in idades)
+    static void TestaArrayContas()
     {
-        soma += idade;
-    }
-
-    double media = (double)soma / idades.Length;
-
-    Console.WriteLine($"\nA média das idades é: {media:F2}\n");
-}
-void TestaBuscarPalavra()
-{
-    string[] arrayDePalavras = new string[5];
-
-    for (int i = 0; i < arrayDePalavras.Length; i++)
-    {
-        Console.WriteLine($"Digite a {i + 1}ª palavra: ");
-        arrayDePalavras[i] = Console.ReadLine();
-    }
-
-    Console.Write("\nQual palavra você deseja buscar? ");
-    var busca = Console.ReadLine();
-
-    bool palavraEncontrada = false;
-
-    foreach (string palavra in arrayDePalavras)
-    {
-        if (palavra.Equals(busca))
-        {
-            palavraEncontrada = true;
-            break;
-        }
-    }
-
-    if (palavraEncontrada)
-    {
-        Console.WriteLine($"Palavra '{busca}' encontrada.");
-    }
-    else
-    {
-        Console.WriteLine($"Palavra '{busca}' não encontrada.");
+        ListaDeContasCorrentes listaDeContas = new ListaDeContasCorrentes();
+        listaDeContas.Adicionar(new ContaCorrente(123456, "555325-A"));
+        listaDeContas.Adicionar(new ContaCorrente(221212, "879325-B"));
+        listaDeContas.Adicionar(new ContaCorrente(123456, "879333-C"));
+       
     }
 }
-
-
