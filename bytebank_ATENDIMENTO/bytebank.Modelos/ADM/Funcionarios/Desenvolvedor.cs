@@ -8,12 +8,12 @@
 
         public override void AumentarSalario()
         {
-            this.Salario *= 0.15;
+            Salario *= 0.15;
         }
 
-        public override double getBonificacao()
+        public override double GetBonificacao()
         {
-            return this.Salario * 0.1;
+            return Salario * 0.1;
         }
     }
 }

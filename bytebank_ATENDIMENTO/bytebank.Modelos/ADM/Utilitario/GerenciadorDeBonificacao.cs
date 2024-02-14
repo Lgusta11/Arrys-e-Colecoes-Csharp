@@ -1,5 +1,4 @@
-﻿
-using bytebank.Modelos.ADM.Funcionarios;
+﻿using bytebank.Modelos.ADM.Funcionarios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,13 +13,13 @@ namespace bytebank.Modelos.ADMs.Utilitario
 
         public void Registrar(Funcionario funcionario)
         {
-            _totalBonificacao += funcionario.getBonificacao();
+            // Corrigir o método chamado aqui
+            _totalBonificacao += funcionario.GetBonificacao();
         }
 
         public double GetTotalBonificacao()
         {
             return _totalBonificacao;
         }
-
     }
 }

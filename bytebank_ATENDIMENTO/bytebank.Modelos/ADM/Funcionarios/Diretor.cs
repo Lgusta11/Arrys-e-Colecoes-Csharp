@@ -1,5 +1,4 @@
-﻿
-namespace bytebank.Modelos.ADM.Funcionarios
+﻿namespace bytebank.Modelos.ADM.Funcionarios
 {
     public class Diretor : FuncionarioAutenticavel
     {
@@ -13,7 +12,7 @@ namespace bytebank.Modelos.ADM.Funcionarios
             this.Salario *= 1.15;
         }
 
-        public override double getBonificacao()
+        public override double GetBonificacao()
         {
             return this.Salario * 0.5;
         }

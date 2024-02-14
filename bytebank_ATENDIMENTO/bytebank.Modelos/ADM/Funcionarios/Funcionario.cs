@@ -1,11 +1,12 @@
-﻿
+﻿using System;
+
 namespace bytebank.Modelos.ADM.Funcionarios
 {
     public abstract class Funcionario
     {
         public static int TotalDeFuncionarios { get; private set; }
 
-        public string Nome { get; set; }
+        public string Nome { get; set; } = ""; // Inicializado com string vazia
         public string CPF { get; private set; }
         public double Salario { get; protected set; }
 
@@ -21,6 +22,6 @@ namespace bytebank.Modelos.ADM.Funcionarios
 
         public abstract void AumentarSalario();
 
-        public abstract double getBonificacao();
+        public abstract double GetBonificacao();
     }
 }

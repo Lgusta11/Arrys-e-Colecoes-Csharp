@@ -1,6 +1,5 @@
 ﻿using bytebank.Modelos.ADM.SistemaInterno;
 
-
 namespace bytebank.Modelos.ADM.Funcionarios
 {
     public abstract class FuncionarioAutenticavel : Funcionario, IAutenticavel
@@ -10,7 +9,7 @@ namespace bytebank.Modelos.ADM.Funcionarios
         public FuncionarioAutenticavel(double salario, string cpf)
             : base(salario, cpf)
         {
-
+            Senha = "SenhaPadrao"; // ou inicialize com um valor apropriado
         }
 
         public bool Autenticar(string senha)

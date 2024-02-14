@@ -2,22 +2,22 @@
 {
     public class Cliente
     {
-        private string _cpf;
-        private string _nome;
-        private string _profissao;
+        private string? _cpf;
+        private string? _nome;
+        private string? _profissao;
 
-        public string Cpf
+        public string? Cpf
         {
             get { return _cpf; }
             set { _cpf = value; }
         }
 
-        public string Nome
+        public string? Nome
         {
             get { return _nome; }
             set
             {
-                if (value.Length >= 3)
+                if (value?.Length >= 3)
                 {
                     _nome = value;
                 }
@@ -28,7 +28,7 @@
             }
         }
 
-        public string Profissao
+        public string? Profissao
         {
             get { return _profissao; }
             set { _profissao = value; }

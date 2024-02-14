@@ -1,10 +1,13 @@
 using System;
+using System.Collections.Generic;
 
 namespace bytebank.Modelos.Conta
 {
     public class ListaDeContasCorrentes
     {
-        private ContaCorrente[] _itens = null;
+        public List<ContaCorrente> Contas { get; } = new List<ContaCorrente>();
+
+        private ContaCorrente[] _itens;
         private int _proximaPosicao = 0;
 
         public ListaDeContasCorrentes(int tamanhoInicial = 5)
@@ -12,17 +15,24 @@ namespace bytebank.Modelos.Conta
             _itens = new ContaCorrente[tamanhoInicial];
         }
 
-        public void Adicionar(ContaCorrente item)
+        public void Adicionar(ContaCorrente conta)
         {
-            Console.WriteLine($"Adicionando posição {_proximaPosicao}");
+            Console.WriteLine($"Adicionando conta na posição {_proximaPosicao}");
             VerificarCapacidade(_proximaPosicao + 1);
-            _itens[_proximaPosicao] = item;
+            _itens[_proximaPosicao] = conta;
             _proximaPosicao++;
         }
 
         private void VerificarCapacidade(int tamanhoNecessario)
         {
-            if (_itens.Length >= tamanhoNecessario) return; // Se já tem espaço suficiente, retorna sem fazer nada
+            if (_itens == null)
+            {
+                _itens = new ContaCorrente[tamanhoNecessario];
+                return;
+            }
+
+            if (_itens.Length >= tamanhoNecessario) return;
+
             Console.WriteLine("Aumentando capacidade da lista");
             ContaCorrente[] novoArray = new ContaCorrente[tamanhoNecessario];
 
@@ -31,7 +41,7 @@ namespace bytebank.Modelos.Conta
                 novoArray[i] = _itens[i];
             }
 
-            _itens = novoArray; // Atualiza a referência para o novo array
+            _itens = novoArray;
         }
     }
 }

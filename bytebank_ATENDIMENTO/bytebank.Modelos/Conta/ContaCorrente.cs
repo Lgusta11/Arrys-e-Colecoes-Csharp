@@ -3,11 +3,11 @@
     public class ContaCorrente
     {
         private int _numero_agencia;
-        private string _conta;
+        private string? _conta; // Adicionado '?' para permitir nulos
         private double saldo;
 
         public Cliente Titular { get; set; }
-        public string Nome_Agencia { get; set; }
+        public string? Nome_Agencia { get; set; } // Adicionado '?' para permitir nulos
 
         public int Numero_agencia
         {
@@ -24,7 +24,7 @@
             }
         }
 
-        public string Conta
+        public string? Conta // Adicionado '?' para permitir nulos
         {
             get
             {
@@ -115,7 +115,7 @@
                    $"Número da Conta : {this.Conta} \n" +
                    $"Titular da Conta: {this.Titular.Nome} \n" +
                    $"CPF do Titular  : {this.Titular.Cpf} \n" +
-                   $"Profissão do Titular: { this.Titular.Profissao}";
+                   $"Profissão do Titular: {this.Titular.Profissao}";
         }
     }
 }
