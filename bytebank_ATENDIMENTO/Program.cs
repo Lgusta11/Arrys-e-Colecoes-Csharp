@@ -23,13 +23,21 @@ class Program
         listaDeContas.Adicionar(new ContaCorrente(123456, "555325-A"));
         listaDeContas.Adicionar(new ContaCorrente(221212, "879325-B"));
         listaDeContas.Adicionar(new ContaCorrente(123456, "879333-C"));
-        var contaGusta = new ContaCorrente(765 , "123445-D");
+        var contaGusta = new ContaCorrente(765, "123445-D");
         listaDeContas.Adicionar(contaGusta);
-        listaDeContas.exibeLista();
-        Console.WriteLine("================================================================");
-        listaDeContas.Remover(contaGusta);
-        listaDeContas.exibeLista();
+        // listaDeContas.exibeLista();
+        // Console.WriteLine("================================================================");
+        // listaDeContas.Remover(contaGusta);
+        // listaDeContas.exibeLista();
 
-       
+        for (int i = 0; i < listaDeContas.Tamanho; i++)
+        {
+            ContaCorrente conta = listaDeContas[1];
+            Console.WriteLine($"Indice [{i}] = {conta.Conta}/{conta.Numero_agencia}");
+        }
     }
 }
+
+
+
+//cd "C:\Users\Admin\Desktop\Array_Collections_C-CodigoInicial\bytebank_ATENDIMENTO"

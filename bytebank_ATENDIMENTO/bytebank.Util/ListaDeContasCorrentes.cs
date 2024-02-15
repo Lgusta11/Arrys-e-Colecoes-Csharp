@@ -73,9 +73,31 @@ namespace bytebank.Modelos.Conta
             if (_itens[1] != null)
             {
                 var conta = _itens[1];
-                Console.WriteLine($"indice[{i}] = Conta: {conta.Conta} - Numero da Agencia: {conta.Numero_Agencia}");
+                Console.WriteLine($"indice[{i}] = Conta: {conta.Conta} - Numero da Agencia: {conta.Numero_agencia}");
             }
         }
 
+        public ContaCorrente RecuperarItemIndice(int indice)
+        {
+            if (indice < 0 || indice >= _proximaPosicao)
+            {
+                throw new ArgumentOutOfRangeException(nameof(indice));
+
+            }
+            return _itens[indice];
+        }
+        public int Tamanho
+        {
+            get
+            {
+                return _proximaPosicao;
+            }
+        }
+        public ListaDeContasCorrentes this [int indice]
+        {
+            get{
+                return RecuperarItemIndice(indice);
+            }
+        }
     }
 }
