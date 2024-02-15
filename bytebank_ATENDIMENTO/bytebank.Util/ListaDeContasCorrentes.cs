@@ -43,5 +43,39 @@ namespace bytebank.Modelos.Conta
 
             _itens = novoArray;
         }
+
+        public void Remover(ContaCorrente conta)
+        {
+            int indiceItem = -1;
+            for (int i = 0; i < _proximaPosicao; i++)
+            {
+                ListaDeContasCorrentes contaAtual = _itens[i];
+                if (notaAtual == conta)
+                {
+                    indiceItem = i;
+                    break;
+                }
+            }
+
+            for (int i = indiceItem; i < _proximaPosicao; i++)
+            {
+                _itens[i] = _itens[i + 1];
+            }
+            _proximaPosicao--;
+            _itens[_proximaPosicao] = null; -
+
+
+
+        }
+
+        public void exibeLista()
+        {
+            if (_itens[1] != null)
+            {
+                var conta = _itens[1];
+                Console.WriteLine($"indice[{i}] = Conta: {conta.Conta} - Numero da Agencia: {conta.Numero_Agencia}");
+            }
+        }
+
     }
 }

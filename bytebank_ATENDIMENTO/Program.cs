@@ -23,6 +23,13 @@ class Program
         listaDeContas.Adicionar(new ContaCorrente(123456, "555325-A"));
         listaDeContas.Adicionar(new ContaCorrente(221212, "879325-B"));
         listaDeContas.Adicionar(new ContaCorrente(123456, "879333-C"));
+        var contaGusta = new ContaCorrente(765 , "123445-D");
+        listaDeContas.Adicionar(contaGusta);
+        listaDeContas.exibeLista();
+        Console.WriteLine("================================================================");
+        listaDeContas.Remover(contaGusta);
+        listaDeContas.exibeLista();
+
        
     }
 }
